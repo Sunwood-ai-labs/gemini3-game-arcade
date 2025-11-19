@@ -1,7 +1,7 @@
 <div align="center">
 
 
-![Gemini3 Game Arcade](https://placehold.co/1200x600/0f0f1a/ff69b4?text=Gemini3+Game+Arcade)
+![Gemini3 Game Arcade](Whisk_6813c2b76fff8f593024cb0ce2040965dr.jpeg)
 
 
 # Gemini3 Game Arcade 🎮✨
