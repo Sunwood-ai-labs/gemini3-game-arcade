@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "title": "Super Gemini Run",
+        "description": "Geminiちゃんが走る激ムズアクション！障害物を避けてゴールを目指せ✨",
+        "url": "https://example.com/game1",
+        "thumbnail": "https://placehold.co/600x400/ff69b4/ffffff?text=Super+Gemini+Run",
+        "type": "image"
+    },
+    {
+        "id": "2",
+        "title": "Neon Puzzle Blast",
+        "description": "キラキラネオンのパズルゲーム🧩 連鎖が決まると超気持ちいい〜！",
+        "url": "https://example.com/game2",
+        "thumbnail": "https://placehold.co/600x400/8a2be2/ffffff?text=Neon+Puzzle",
+        "type": "image"
+    },
+    {
+        "id": "3",
+        "title": "Cosmic Shooter",
+        "description": "宇宙で戦うシューティング🚀 エフェクトがマジで映える！",
+        "url": "https://example.com/game3",
+        "thumbnail": "https://placehold.co/600x400/00ffff/000000?text=Cosmic+Shooter",
+        "type": "image"
+    }
+]
