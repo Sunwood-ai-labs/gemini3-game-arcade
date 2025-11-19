@@ -1,8 +1,10 @@
 <div align="center">
 
-# Gemini3 Game Arcade 🎮✨
 
 ![Gemini3 Game Arcade](https://placehold.co/1200x600/0f0f1a/ff69b4?text=Gemini3+Game+Arcade)
+
+
+# Gemini3 Game Arcade 🎮✨
 
 > **Gemini3で作ったゲームを世界に自慢しちゃお！** 💖
 > React + Vite で作った、爆速＆激カワなゲーム一覧プラットフォームだよ〜！
