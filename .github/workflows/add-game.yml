@@ -6,7 +6,6 @@ on:
 
 jobs:
   add-game:
-    if: contains(github.event.issue.labels.*.name, 'game-submission')
     runs-on: ubuntu-latest
     permissions:
       contents: write
