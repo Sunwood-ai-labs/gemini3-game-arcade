@@ -1,0 +1,11 @@
+{
+  "generation_date": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+  "prompt": "Header image for "Gemini3 Game Arcade - v0\.1\.0 -". A futuristic, cyberpunk-inspired arcade scene with a strong emphasis on glassmorphism and neon lighting. Imagine a clean, sleek interface with glowing, translucent panels displaying various game thumbnails. Neon lines and shapes define the space, reflecting off polished, clear surfaces. The color palette should be vibrant neon pinks, blues, purples, and greens against a dark, subtle background, giving a "Gal Engineer" aesthetic. Include abstract representations of game elements or code snippets subtly integrated into the design. High detail, sharp focus, digital art.",
+  "model": "imagen-4-ultra",
+  "num_images": 1,
+  "aspect_ratio": "16:9",
+  "seed": "",
+  "workflow_run": "1",
+  "commit_sha": "8f258383b827457e947a110b573d6dadb90e23b3",
+  "tag": "v0.1.0"
+}
