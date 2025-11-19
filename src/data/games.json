@@ -30,5 +30,13 @@
         "url": "https://example.com/mock",
         "thumbnail": "https://placehold.co/600x400",
         "type": "image"
+    },
+    {
+        "id": "1763569515823",
+        "title": "防衛ゲーム",
+        "description": "2Dタワーディフェンス防衛ゲーム",
+        "url": "https://gemini.google.com/share/04cc38ddbfda",
+        "thumbnail": "https://github.com/user-attachments/assets/c77ebc66-067d-4b48-86af-7e12a5b86072",
+        "type": "image"
     }
 ]
