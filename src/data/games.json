@@ -22,5 +22,13 @@
         "url": "https://example.com/game3",
         "thumbnail": "https://placehold.co/600x400/00ffff/000000?text=Cosmic+Shooter",
         "type": "image"
+    },
+    {
+        "id": "1763569086291",
+        "title": "Mock Game",
+        "description": "This is a mock game description.",
+        "url": "https://example.com/mock",
+        "thumbnail": "https://placehold.co/600x400",
+        "type": "image"
     }
 ]

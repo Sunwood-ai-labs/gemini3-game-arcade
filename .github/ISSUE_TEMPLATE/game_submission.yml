@@ -1,0 +1,46 @@
+name: 🎮 Game Submission
+description: Submit a new game to the arcade!
+title: "[Game]: "
+labels: ["game-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting your game! Please fill out the details below.
+        ゲームの投稿ありがとう！以下の詳細を記入してね✨
+
+  - type: input
+    id: title
+    attributes:
+      label: Game Title
+      description: The name of your game.
+      placeholder: Super Gemini Run
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of your game (max 200 characters).
+      placeholder: Geminiちゃんが走る激ムズアクション！
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Game URL
+      description: The URL where your game is hosted.
+      placeholder: https://example.com/my-game
+    validations:
+      required: true
+
+  - type: input
+    id: thumbnail
+    attributes:
+      label: Thumbnail URL
+      description: A URL to a thumbnail image (approx 600x400).
+      placeholder: https://placehold.co/600x400/ff69b4/ffffff?text=My+Game
+    validations:
+      required: true

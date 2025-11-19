@@ -1,0 +1,82 @@
+name: 🎮 Add Game from Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-game:
+    if: contains(github.event.issue.labels.*.name, 'game-submission')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Add Game to JSON
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            const issueBody = context.payload.issue.body;
+            
+            // Helper function to extract value from Markdown sections
+            function extractValue(header) {
+              const regex = new RegExp(`### ${header}\\s+([\\s\\S]*?)(?=###|$)`, 'i');
+              const match = issueBody.match(regex);
+              return match ? match[1].trim() : null;
+            }
+            
+            const title = extractValue('Game Title');
+            const description = extractValue('Description');
+            const url = extractValue('Game URL');
+            const thumbnail = extractValue('Thumbnail URL');
+            
+            if (!title || !description || !url || !thumbnail) {
+              core.setFailed('❌ Could not parse all required fields from Issue Body.');
+              return;
+            }
+            
+            const gamesFilePath = 'src/data/games.json';
+            
+            try {
+              const data = fs.readFileSync(gamesFilePath, 'utf8');
+              const games = JSON.parse(data);
+              
+              const newGame = {
+                id: Date.now().toString(),
+                title,
+                description,
+                url,
+                thumbnail,
+                type: 'image'
+              };
+              
+              games.push(newGame);
+              
+              fs.writeFileSync(gamesFilePath, JSON.stringify(games, null, 4), 'utf8');
+              console.log(`✅ Added game: ${title}`);
+              
+              // Export title for next step
+              core.setOutput('game_title', title);
+              
+            } catch (error) {
+              core.setFailed(`❌ Error updating games.json: ${error.message}`);
+            }
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/games.json
+          git commit -m "✨ feat: Add new game '${{ steps.add-game-script.outputs.game_title }}' from #${{ github.event.issue.number }}"
+          git push
+
+      - name: Close Issue
+        run: |
+          gh issue close ${{ github.event.issue.number }} --comment "🎉 Game added successfully! Thank you for your contribution! ✨"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
