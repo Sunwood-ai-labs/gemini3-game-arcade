@@ -22,5 +22,13 @@
         "url": "https://gemini.google.com/share/7f4fd0a7841f",
         "thumbnail": "https://github.com/user-attachments/assets/4e74052a-b82e-4fdb-8f78-7f570ca8b754",
         "type": "image"
+    },
+    {
+        "id": "1763644206873",
+        "title": "カフェベンチャーピッチスライド生成",
+        "description": "Googleの生成AIモデル「Gemini 2.5 Flash (TTS)」を使用して、自然で感情豊かなナレーションを生成",
+        "url": "https://gemini.google.com/share/9f58c493797c",
+        "thumbnail": "https://github.com/user-attachments/assets/da6dae51-a5a7-4d0c-9cfb-13a9d0ae1def",
+        "type": "image"
     }
 ]
