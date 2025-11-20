@@ -55,7 +55,17 @@ npm run dev
 
 ## 📝 ゲームの追加方法
 
-新しいゲームを追加するのは超カンタン！
+### 方法1: GitHubのIssueから登録（おすすめ！）✨
+
+一番簡単な方法！以下のリンクからIssueを作成するだけ👇
+
+**[🎮 ゲーム登録リクエスト（Issueを作成）](https://github.com/Sunwood-ai-labs/gemini3-game-arcade/issues/new?template=game_request.md&title=%E3%82%B2%E3%83%BC%E3%83%A0%E7%99%BB%E9%8C%B2%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88)**
+
+必要な情報（ゲーム名、URL、説明など）を入力すれば、私たちがレビューして追加します！
+プログラミングの知識がなくても大丈夫！💪
+
+### 方法2: 直接 `games.json` を編集（開発者向け）
+
 `src/data/games.json` を開いて、こんな感じでデータを追加してね👇
 
 ```json
