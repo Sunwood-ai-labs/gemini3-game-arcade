@@ -1,59 +1,12 @@
 [
     {
-        "id": "1763569515823",
-        "title": "防衛ゲーム",
-        "description": "2Dタワーディフェンス防衛ゲーム",
-        "url": "https://gemini.google.com/share/04cc38ddbfda",
-        "thumbnail": "https://github.com/user-attachments/assets/c77ebc66-067d-4b48-86af-7e12a5b86072",
-        "type": "image"
-    },
-    {
-        "id": "1763571290377",
-        "title": "弾幕シューティング",
-        "description": "ネオン弾幕シューティング",
-        "url": "https://gemini.google.com/share/7717f601af31",
-        "thumbnail": "https://github.com/user-attachments/assets/02586c56-e031-4499-acd5-025b56dfcaa3",
-        "type": "image"
-    },
-    {
-        "id": "1763583472606",
-        "title": "VoxelCityBuilder",
-        "description": "VoxelCityBuilder",
-        "url": "https://gemini.google.com/share/7f4fd0a7841f",
-        "thumbnail": "https://github.com/user-attachments/assets/4e74052a-b82e-4fdb-8f78-7f570ca8b754",
-        "type": "image"
-    },
-    {
-        "id": "1763644206873",
-        "title": "カフェベンチャーピッチスライド生成",
-        "description": "Googleの生成AIモデル「Gemini 2.5 Flash (TTS)」を使用して、自然で感情豊かなナレーションを生成",
-        "url": "https://gemini.google.com/share/9f58c493797c",
-        "thumbnail": "https://github.com/user-attachments/assets/da6dae51-a5a7-4d0c-9cfb-13a9d0ae1def",
-        "type": "image"
-    },
-    {
-        "id": "1763644278799",
-        "title": "Gemini APNG Maker",
-        "description": "アップロードした画像を「Nano Banana (Flash Image)」でアニメーション化",
-        "url": "https://gemini.google.com/share/a9c58b923bdb",
-        "thumbnail": "https://github.com/user-attachments/assets/937953c0-40f1-4a57-850f-d65186752771",
-        "type": "image"
-    },
-    {
-        "id": "1763814515101",
-        "title": "GreenScreenRemover",
-        "description": "グリーンバック透過アプリ",
-        "url": "https://gemini.google.com/share/046e5b3381f1",
-        "thumbnail": "https://github.com/user-attachments/assets/f43a620a-6d6e-4c79-a6f3-3de97d21c5cb",
-        "type": "image"
-    },
-    {
-        "id": "1763820582586",
-        "title": "AI LINEスタンプ・メーカー",
-        "description": "AI LINEスタンプ・メーカー",
-        "url": "https://gemini.google.com/share/6f47f7179691",
-        "thumbnail": "https://github.com/user-attachments/assets/fceb4471-919c-4aaa-8bd9-21b3a16cd8ae",
-        "type": "image"
+        "id": "1763983068091",
+        "title": "LINEアニメーションスタンプ一括作成ツール",
+        "description": "画像からLINE規格に合ったAPNGファイルを生成します",
+        "url": "https://gemini.google.com/share/be08197bb3f2",
+        "thumbnail": "https://github.com/user-attachments/assets/c7188bb4-02fc-4eea-9fc4-1cb40fe93b71",
+        "type": "image",
+        "category": "ツール"
     },
     {
         "id": "1763891182607",
@@ -61,14 +14,70 @@
         "description": "GIFアニメーション生成アプリの作成",
         "url": "https://gemini.google.com/share/87c1b2f32cda",
         "thumbnail": "https://github.com/user-attachments/assets/1bf8e6f5-f7bb-486a-9c0e-58627c79e5cc",
-        "type": "image"
+        "type": "image",
+        "category": "ツール"
     },
     {
-        "id": "1763983068091",
-        "title": "LINEアニメーションスタンプ一括作成ツール",
-        "description": "画像からLINE規格に合ったAPNGファイルを生成します",
-        "url": "https://gemini.google.com/share/be08197bb3f2",
-        "thumbnail": "https://github.com/user-attachments/assets/c7188bb4-02fc-4eea-9fc4-1cb40fe93b71",
-        "type": "image"
+        "id": "1763820582586",
+        "title": "AI LINEスタンプ・メーカー",
+        "description": "AI LINEスタンプ・メーカー",
+        "url": "https://gemini.google.com/share/6f47f7179691",
+        "thumbnail": "https://github.com/user-attachments/assets/fceb4471-919c-4aaa-8bd9-21b3a16cd8ae",
+        "type": "image",
+        "category": "ツール"
+    },
+    {
+        "id": "1763814515101",
+        "title": "GreenScreenRemover",
+        "description": "グリーンバック透過アプリ",
+        "url": "https://gemini.google.com/share/046e5b3381f1",
+        "thumbnail": "https://github.com/user-attachments/assets/f43a620a-6d6e-4c79-a6f3-3de97d21c5cb",
+        "type": "image",
+        "category": "ツール"
+    },
+    {
+        "id": "1763644278799",
+        "title": "Gemini APNG Maker",
+        "description": "アップロードした画像を「Nano Banana (Flash Image)」でアニメーション化",
+        "url": "https://gemini.google.com/share/a9c58b923bdb",
+        "thumbnail": "https://github.com/user-attachments/assets/937953c0-40f1-4a57-850f-d65186752771",
+        "type": "image",
+        "category": "ツール"
+    },
+    {
+        "id": "1763644206873",
+        "title": "カフェベンチャーピッチスライド生成",
+        "description": "Googleの生成AIモデル「Gemini 2.5 Flash (TTS)」を使用して、自然で感情豊かなナレーションを生成",
+        "url": "https://gemini.google.com/share/9f58c493797c",
+        "thumbnail": "https://github.com/user-attachments/assets/da6dae51-a5a7-4d0c-9cfb-13a9d0ae1def",
+        "type": "image",
+        "category": "ツール"
+    },
+    {
+        "id": "1763583472606",
+        "title": "VoxelCityBuilder",
+        "description": "VoxelCityBuilder",
+        "url": "https://gemini.google.com/share/7f4fd0a7841f",
+        "thumbnail": "https://github.com/user-attachments/assets/4e74052a-b82e-4fdb-8f78-7f570ca8b754",
+        "type": "image",
+        "category": "ゲーム"
+    },
+    {
+        "id": "1763571290377",
+        "title": "弾幕シューティング",
+        "description": "ネオン弾幕シューティング",
+        "url": "https://gemini.google.com/share/7717f601af31",
+        "thumbnail": "https://github.com/user-attachments/assets/02586c56-e031-4499-acd5-025b56dfcaa3",
+        "type": "image",
+        "category": "ゲーム"
+    },
+    {
+        "id": "1763569515823",
+        "title": "防衛ゲーム",
+        "description": "2Dタワーディフェンス防衛ゲーム",
+        "url": "https://gemini.google.com/share/04cc38ddbfda",
+        "thumbnail": "https://github.com/user-attachments/assets/c77ebc66-067d-4b48-86af-7e12a5b86072",
+        "type": "image",
+        "category": "ゲーム"
     }
 ]
