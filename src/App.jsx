@@ -1,12 +1,183 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import Header from './components/Header';
 import GameCard from './components/GameCard';
-import games from './data/games.json';
+import gamesData from './data/games.json';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('すべて');
+  const [sortOrder, setSortOrder] = useState('newest');
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    const cats = [...new Set(gamesData.map(game => game.category))];
+    return ['すべて', ...cats];
+  }, []);
+
+  // Filter and sort games
+  const filteredGames = useMemo(() => {
+    let result = [...gamesData];
+
+    // Filter by search query
+    if (searchQuery) {
+      result = result.filter(game =>
+        game.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        game.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    // Filter by category
+    if (selectedCategory !== 'すべて') {
+      result = result.filter(game => game.category === selectedCategory);
+    }
+
+    // Sort games
+    result.sort((a, b) => {
+      if (sortOrder === 'newest') {
+        return parseInt(b.id) - parseInt(a.id);
+      } else if (sortOrder === 'oldest') {
+        return parseInt(a.id) - parseInt(b.id);
+      } else if (sortOrder === 'name') {
+        return a.title.localeCompare(b.title, 'ja');
+      }
+      return 0;
+    });
+
+    return result;
+  }, [searchQuery, selectedCategory, sortOrder]);
+
   return (
     <div className="container">
       <Header />
+
+      {/* Search and Filter Controls */}
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
+        marginBottom: '40px',
+        padding: '30px',
+        background: 'linear-gradient(135deg, rgba(100, 200, 255, 0.05), rgba(255, 100, 200, 0.05))',
+        borderRadius: '20px',
+        border: '2px solid rgba(255, 255, 255, 0.1)',
+        backdropFilter: 'blur(10px)'
+      }}>
+        {/* Search Bar */}
+        <div>
+          <label htmlFor="search" style={{ display: 'block', marginBottom: '10px', color: 'var(--color-text)', fontWeight: 'bold' }}>
+            🔍 検索
+          </label>
+          <input
+            id="search"
+            type="text"
+            placeholder="ゲームやツールを検索..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '15px 20px',
+              fontSize: '1rem',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '2px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '12px',
+              color: 'var(--color-text)',
+              outline: 'none',
+              transition: 'all 0.3s ease'
+            }}
+            onFocus={(e) => {
+              e.target.style.borderColor = 'var(--color-primary)';
+              e.target.style.background = 'rgba(255, 255, 255, 0.08)';
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+              e.target.style.background = 'rgba(255, 255, 255, 0.05)';
+            }}
+          />
+        </div>
+
+        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+          {/* Category Filter */}
+          <div style={{ flex: '1', minWidth: '200px' }}>
+            <label htmlFor="category" style={{ display: 'block', marginBottom: '10px', color: 'var(--color-text)', fontWeight: 'bold' }}>
+              📁 カテゴリ
+            </label>
+            <select
+              id="category"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              style={{
+                width: '100%',
+                padding: '15px 20px',
+                fontSize: '1rem',
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '12px',
+                color: 'var(--color-text)',
+                outline: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onFocus={(e) => {
+                e.target.style.borderColor = 'var(--color-primary)';
+              }}
+              onBlur={(e) => {
+                e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+              }}
+            >
+              {categories.map(cat => (
+                <option key={cat} value={cat} style={{ background: '#1a1a2e', color: 'var(--color-text)' }}>
+                  {cat}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Sort Options */}
+          <div style={{ flex: '1', minWidth: '200px' }}>
+            <label htmlFor="sort" style={{ display: 'block', marginBottom: '10px', color: 'var(--color-text)', fontWeight: 'bold' }}>
+              🔄 並び順
+            </label>
+            <select
+              id="sort"
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value)}
+              style={{
+                width: '100%',
+                padding: '15px 20px',
+                fontSize: '1rem',
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '12px',
+                color: 'var(--color-text)',
+                outline: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onFocus={(e) => {
+                e.target.style.borderColor = 'var(--color-primary)';
+              }}
+              onBlur={(e) => {
+                e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+              }}
+            >
+              <option value="newest" style={{ background: '#1a1a2e', color: 'var(--color-text)' }}>新しい順</option>
+              <option value="oldest" style={{ background: '#1a1a2e', color: 'var(--color-text)' }}>古い順</option>
+              <option value="name" style={{ background: '#1a1a2e', color: 'var(--color-text)' }}>名前順</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Results Count */}
+        <div style={{
+          textAlign: 'center',
+          color: 'var(--color-text-muted)',
+          fontSize: '0.95rem',
+          paddingTop: '10px',
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)'
+        }}>
+          {filteredGames.length} 件のアイテムが見つかりました
+        </div>
+      </div>
 
       <main style={{
         display: 'grid',
@@ -14,9 +185,22 @@ function App() {
         gap: '30px',
         padding: '20px 0 60px 0'
       }}>
-        {games.map((game) => (
-          <GameCard key={game.id} game={game} />
-        ))}
+        {filteredGames.length > 0 ? (
+          filteredGames.map((game) => (
+            <GameCard key={game.id} game={game} />
+          ))
+        ) : (
+          <div style={{
+            gridColumn: '1 / -1',
+            textAlign: 'center',
+            padding: '60px 20px',
+            color: 'var(--color-text-muted)'
+          }}>
+            <p style={{ fontSize: '1.5rem', marginBottom: '10px' }}>😢</p>
+            <p style={{ fontSize: '1.2rem' }}>該当するアイテムが見つかりませんでした</p>
+            <p style={{ fontSize: '1rem' }}>検索条件を変更してみてください</p>
+          </div>
+        )}
       </main>
 
       {/* Call to Action Section */}
