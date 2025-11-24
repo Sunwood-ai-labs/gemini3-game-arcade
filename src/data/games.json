@@ -62,5 +62,13 @@
         "url": "https://gemini.google.com/share/87c1b2f32cda",
         "thumbnail": "https://github.com/user-attachments/assets/1bf8e6f5-f7bb-486a-9c0e-58627c79e5cc",
         "type": "image"
+    },
+    {
+        "id": "1763983068091",
+        "title": "LINEアニメーションスタンプ一括作成ツール",
+        "description": "画像からLINE規格に合ったAPNGファイルを生成します",
+        "url": "https://gemini.google.com/share/be08197bb3f2",
+        "thumbnail": "https://github.com/user-attachments/assets/c7188bb4-02fc-4eea-9fc4-1cb40fe93b71",
+        "type": "image"
     }
 ]
